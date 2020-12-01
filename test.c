@@ -19,10 +19,10 @@ int main(void){
 
 
 } 
-//ÊµÏÖº¯Êı - ¼òµ¥µÄ½âÎöint char strÈıÖÖÊı¾İ
+//å®ç°å‡½æ•° - ç®€å•çš„è§£æint char strä¸‰ç§æ•°æ®
 void ezprintf(const char word[],void *arr[]){
 	
-	 int flag = 0;        //½âÎö±êÖ¾Î» ÖÃ1±íÃ÷Óöµ½%
+	 int flag = 0;        //è§£ææ ‡å¿—ä½ ç½®1è¡¨æ˜é‡åˆ°%
 	 const char* p = NULL;
 	 int i=0;  
 	   
@@ -31,45 +31,45 @@ void ezprintf(const char word[],void *arr[]){
 		switch (*p)
 		{
 			case '%':
-				if (1 != flag)      //½âÎö±êÖ¾Î» ÖÃ1
+				if (1 != flag)      //è§£ææ ‡å¿—ä½ ç½®1
 				{
 					flag = 1;
 				}
 				break;
-			case 'x':              //Êä³ö16½øÖÆÎŞ·ûºÅÕûÊıÊı¾İ
-				if (flag)          //Èç¹ûĞèÒª½âÎö
+			case 'x':              //è¾“å‡º16è¿›åˆ¶æ— ç¬¦å·æ•´æ•°æ•°æ®
+				if (flag)          //å¦‚æœéœ€è¦è§£æ
 				{
 					flag = 0;
-			    intToHexChar(*((unsigned int*)arr[1]));     //Êä³öÊ®Áù½øÖÆÊı 
+			    intToHexChar(*((unsigned int*)arr[1]));     //è¾“å‡ºåå…­è¿›åˆ¶æ•° 
 					
 				}
-				else               //Èç²»ĞèÒª½âÎöÔòÖ±½ÓÊä³ö'x'
+				else               //å¦‚ä¸éœ€è¦è§£æåˆ™ç›´æ¥è¾“å‡º'x'
 				{
 				    putchar('x');	           
 				}
 				break;
-			case 'c':               //Êä³öcharÊı¾İ
+			case 'c':               //è¾“å‡ºcharæ•°æ®
 				if (flag)
 				{
 					flag = 0;
-					putchar(*((char*)arr[2]));         //Êä³ö×Ö·û 
+					putchar(*((char*)arr[2]));         //è¾“å‡ºå­—ç¬¦ 
 				}
-				else       //Èç²»ĞèÒª½âÎöÔòÖ±½ÓÊä³ö'c' 
+				else       //å¦‚ä¸éœ€è¦è§£æåˆ™ç›´æ¥è¾“å‡º'c' 
 				{
 				  	putchar('c');  
 				} 
 				break;
-			case 's'://Êä³östrÊı¾İ
+			case 's'://è¾“å‡ºstræ•°æ®
 				if (flag)
 				{
 					flag= 0;
-					for(i=0;i<6;i++){     //ÓÉÓÚ²»¿¼ÂÇ±äº¯Êı²ÎÊıµÄÇé¿ö£¬¾ÍÔÚÕâÀïĞ´ËÀÁË 
-						putchar(*((const char*)arr[0]+i));  //Êä³ö×Ö·û´® 
+					for(i=0;i<6;i++){     //ç”±äºä¸è€ƒè™‘å˜å‡½æ•°å‚æ•°çš„æƒ…å†µï¼Œå°±åœ¨è¿™é‡Œå†™æ­»äº†ã€‚
+						putchar(*((const char*)arr[0]+i));  //è¾“å‡ºå­—ç¬¦ä¸² 
 					} 
 				}
 				else 
 				{
-				    putchar('s');       //Ö±½ÓÊä³ö's'
+				    putchar('s');       //ç›´æ¥è¾“å‡º's'
 				} 
 				break;
 			default:
@@ -79,13 +79,13 @@ void ezprintf(const char word[],void *arr[]){
 				} 
 				else
 				{
-			        putchar(*p);  	//Ö±½Ó°´×Ö·ûÊä³ö
+			        putchar(*p);  	//ç›´æ¥æŒ‰å­—ç¬¦è¾“å‡º
 				} 
 				break;
 		}
 	}
 }
-//×ª»»16½øÖÆÊı
+//è½¬æ¢16è¿›åˆ¶æ•°
 unsigned char intToHexChar(unsigned int c){
 	  int k;
 	  int j=0;
@@ -97,7 +97,7 @@ unsigned char intToHexChar(unsigned int c){
 	} 
 	for(k=3;k>=0;k--){
 		if(Hex[k]>9){
-	  	putchar(Hex[k]+87);  //×ª»¯ÎªĞ¡Ğ´×ÖÄ¸£¬ 
+	  	putchar(Hex[k]+87);  //è½¬åŒ–ä¸ºå°å†™å­—æ¯ï¼Œ 
 	}
 	  }  
 }
